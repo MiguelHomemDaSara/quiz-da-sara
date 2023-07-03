@@ -1,29 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Quiz da Namorada</title>
+    <title>Quiz Especial para o Aniversário da [Sara]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .question {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        #result {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>QUIZ PARA MINHA NAMORADA</h1>
-    <p>1. Qual é a cor favorita da sua namorada?</p>
-    <input type="text" id="resposta1">
+    <h1>QUIZ Especial para o Aniversário da [Sara Sarinha Sarita</h1>
+    <div class="question">
+        <p>Qual é a sua altura? (em centímetros)</p>
+        <input type="number" id="altura" class="answer-input">
+    </div>
 
-    <p>2. Qual é o prato de comida favorito dela?</p>
-    <input type="text" id="resposta2">
+    <div class="question">
+        <p>Qual é o seu prato favorito ?</p>
+        <input type="text" id="pratoFavorito" class="answer-input">
+    </div>
 
-    <p>3. Qual é o filme preferido dela?</p>
-    <input type="text" id="resposta3">
+    <div class="question">
+        <p>Qual é o seu sonho de viagem ?</p>
+        <input type="text" id="sonhoViagem" class="answer-input">
+    </div>
 
-    <button onclick="exibirRespostas()">Mostrar Respostas</button>
+    <!-- Adicione mais perguntas aqui -->
+
+    <button onclick="exibirResultado()">Enviar</button>
+
+    <div id="result"></div>
 
     <script>
-        function exibirRespostas() {
-            var resposta1 = document.getElementById("resposta1").value;
-            var resposta2 = document.getElementById("resposta2").value;
-            var resposta3 = document.getElementById("resposta3").value;
+        function exibirResultado() {
+            var altura = document.getElementById("altura").value;
+            var pratoFavorito = document.getElementById("pratoFavorito").value;
+            var sonhoViagem = document.getElementById("sonhoViagem").value;
+            // Adicione mais variáveis para as outras perguntas
 
-            alert(`Respostas:\n1. Cor favorita: ${resposta1}\n2. Prato favorito: ${resposta2}\n3. Filme preferido: ${resposta3}`);
-        }
-    </script>
-</body>
-</html>
+            var resultado = `Você acertou:<br><br>`;
+
+            // Perguntas sobre ela
+            if (altura === "170") {
+                resultado += "1. Qual é a altura dela? Resposta correta: 151 cm<br>";
+            } else {
+                resultado += `1. Qual é a altura dela? Resposta correta: 170 cm. Sua resposta: ${altura} cm<br>`;
+            }
+
+            if (pratoFavorito.toLowerCase() === "pizza") {
+                resultado += "2. Qual é o prato favorito dela? Resposta correta: Pizza<br>";
+            } else {
+                resultado += `2. Qual é o prato favorito dela? Resposta correta: Pizza. Sua resposta: ${pratoFavorito}<br>`;
+            }
+
+            if (sonhoViagem.toLowerCase() === "paris") {
+                resultado += "3. Qual é o sonho de viagem dela? Resposta correta: Paris<br>";
+            }
