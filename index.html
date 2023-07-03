@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz da Namorada</title>
+</head>
+<body>
+    <h1>QUIZ PARA MINHA NAMORADA</h1>
+    <p>1. Qual é a cor favorita da sua namorada?</p>
+    <input type="text" id="resposta1">
+
+    <p>2. Qual é o prato de comida favorito dela?</p>
+    <input type="text" id="resposta2">
+
+    <p>3. Qual é o filme preferido dela?</p>
+    <input type="text" id="resposta3">
+
+    <button onclick="exibirRespostas()">Mostrar Respostas</button>
+
+    <script>
+        function exibirRespostas() {
+            var resposta1 = document.getElementById("resposta1").value;
+            var resposta2 = document.getElementById("resposta2").value;
+            var resposta3 = document.getElementById("resposta3").value;
+
+            alert(`Respostas:\n1. Cor favorita: ${resposta1}\n2. Prato favorito: ${resposta2}\n3. Filme preferido: ${resposta3}`);
+        }
+    </script>
+</body>
+</html>
